@@ -1,0 +1,7 @@
+1. Create Movie, Director, Actor, Genre, User and MovieDatabase classes. CHECKED!
+2. Create movie, director, actor, genre, and user databases. CHECKED!
+3. Implement CRUD operations:
+    - Create operation. movies, actors, directors, genres, and users.   CHECKED!
+    - Read operation.                                                   CHECKED!
+    - Update operation.
+    - Delete operation.

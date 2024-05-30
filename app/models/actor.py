@@ -4,15 +4,19 @@
 from datetime import date
 
 class Actor:
-    def __init__(self,db, name:str, birthday:date, nationality:str):
-        self.db = db
+    def __init__(self, name:str, birthday:date, nationality:str) -> None:
         self.name = name
         self.birthday = birthday
         self.nationality = nationality
 
-def save(self):
-    self.db.cur.execute('''
-        INSERT INTO actors (name, birthday, nationality)
-        VALUES (?, ?, ?)
-        ''', (self.name, self.birthday, self.nationality))
-    self.db.conn.commit()
+    @staticmethod
+    def create_table(db):
+        query = """
+        CREATE TABLE IF NOT EXISTS actors (
+                        id INTEGER PRIMARY KEY,
+                        name TEXT NOT NULL,
+                        birthday DATE,
+                        nationality TEXT
+        )
+        """
+        db.execute(query)
