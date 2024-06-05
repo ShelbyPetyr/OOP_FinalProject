@@ -1,0 +1,90 @@
+movie_database/
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── database.py
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── movie.py
+│   │   ├── actor.py
+│   │   ├── genre.py
+│   │   ├── director.py
+│   │   └── user.py
+├── data/
+│   └── movies.db
+├── requirements.txt
+└── README.md
+
++-----------------------+
+|         Movie         |
++-----------------------+
+| - title: str          |
+| - release_date: date  |
+| - director_id: int    |
+| - genre_id: int       |
++-----------------------+
+| + create_table(db)    |
+| + save_to_db(db)      |
+| + get_all_movies(db)  |
+| + find_by_title(db, title: str) |
++-----------------------+
+        | 1
+        |
+        | * (foreign key)
+        v
++-----------------------+
+|       Director        |
++-----------------------+
+| - name: str           |
+| - birthday: date      |
+| - nationality: str    |
++-----------------------+
+| + create_table(db)    |
+| + save_to_db(db)      |
+| + get_all_directors(db)|
+| + find_by_name(db, name: str) |
++-----------------------+
+
+        | 1
+        |
+        | * (foreign key)
+        v
++-----------------------+
+|         Genre         |
++-----------------------+
+| - name: str           |
++-----------------------+
+| + create_table(db)    |
+| + save_to_db(db)      |
+| + get_all_genres(db)  |
+| + find_by_name(db, name: str) |
++-----------------------+
+
+        |
+        | * (many-to-many relationship)
+        v
++-----------------------+
+|         Actor         |
++-----------------------+
+| - name: str           |
+| - birthday: date      |
+| - nationality: str    |
++-----------------------+
+| + create_table(db)    |
+| + save_to_db(db)      |
+| + get_all_actors(db)  |
+| + find_by_name(db, name: str) |
++-----------------------+
+
++-----------------------+
+|         User          |
++-----------------------+
+| - username: str       |
+| - email: str          |
+| - password: str       |
++-----------------------+
+| + create_table(db)    |
+| + save_to_db(db)      |
+| + get_all_users(db)   |
+| + find_by_username(db, username: str) |
++-----------------------+

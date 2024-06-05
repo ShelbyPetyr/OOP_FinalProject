@@ -3,5 +3,8 @@
 3. Implement CRUD operations:
     - Create operation. movies, actors, directors, genres, and users.   CHECKED!
     - Read operation.                                                   CHECKED!
-    - Update operation.
-    - Delete operation.
+    - Update operation.                                                 CHECKED!
+    - Delete operation.                                                 CHECKED!
+4. Diagram
+5. Requirement.txt
+6. Flask implementation
